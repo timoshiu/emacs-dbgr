@@ -62,6 +62,7 @@
 ;;   trepan2        trepan2       trepanning debugger for Python 2.x
 ;;   trepan3k       trepan3k      trepanning debugger for Python 3.x
 ;;   zshdb          zshdb         Zsh
+;;   nodedebug      node debug    node (node debug --debug-gud)
 ;;
 ;;
 ;; **gdb invocation requires the realgud- preface to disambiguate it
@@ -115,6 +116,7 @@
      "./realgud/debugger/trepanx/trepanx"
      "./realgud/debugger/trepan8/trepan8"
      "./realgud/debugger/zshdb/zshdb"
+     "./realgud/debugger/nodedebug/nodedebug"
      ) "realgud-")
   )
 

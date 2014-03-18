@@ -63,7 +63,8 @@ position.")
 ;;   (add-to-list 'overlay-arrow-variable-list 'realgud-overlay-arrow1)
 
 (dolist (pair
-	 '( ("3" . "3>")  ("2" . "2>") ("1" . "=>")))
+	 '( ("3" . "")  ("2" . "") ("1" . "=>")))
+         ;;'( ("3" . "3>")  ("2" . "2>") ("1" . "=>")))
   (let ((arrow-symbol (intern (concat "realgud-overlay-arrow" (car pair))))
 	(arrow-bitmap (intern (concat "realgud-right-triangle" (car pair))))
 	(arrow-face (intern (concat "realgud-overlay-arrow" (car pair)))))

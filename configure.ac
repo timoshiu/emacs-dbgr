@@ -81,6 +81,7 @@ AC_CONFIG_FILES([Makefile \
 		 realgud/debugger/trepanx/Makefile \
 		 realgud/debugger/trepan8/Makefile \
 		 realgud/debugger/zshdb/Makefile \
+		 realgud/debugger/nodedebug/Makefile \
 		 realgud/lang/Makefile \
 		 test/Makefile \
 		 ])
