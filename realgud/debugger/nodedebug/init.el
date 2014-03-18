@@ -24,7 +24,7 @@ realgud-loc-pat struct")
 ;;   (break in /etc/init.d/apparmor:35):
 (setf (gethash "loc" realgud-nodedebug-pat-hash)
       (make-realgud-loc-pat
-       :regexp "(break in \\([^:]+\\):\\([0-9]*\\))"
+       :regexp "\\((break in \\([^:]+\\):\\([0-9]*\\))\\)"
        :file-group 2
        :line-group 3))
 
@@ -54,9 +54,10 @@ realgud-loc-pat struct")
 
 ;; Regular expression that describes a debugger "backtrace" command line.
 ;; For example:
-;;   ->0 in file `../nodedebug/test/example/subshell.sh' at line 6
-;;   ##1 source("../nodedebug/shell.sh") called from file `/bin/nodedebug' at line 140
-;;   ##2 main() called from file `/bin/nodedebug' at line 0
+;; (nodedebug) bt
+;; ##0 hello at 05_read_dir.js:6
+;; ##1 main at 05_read_dir.js:37
+
 (setf (gethash "debugger-backtrace" realgud-nodedebug-pat-hash)
       (make-realgud-loc-pat
        :regexp 	(concat realgud-shell-frame-start-regexp
@@ -102,7 +103,8 @@ realgud-loc-pat struct")
   "Hash key is command name like 'quit' and the value is
   the nodedebug command to use, like 'quit!'")
 
-(setf (gethash "quit" realgud-nodedebug-command-hash) "quit!")
+(setf (gethash "quit" realgud-nodedebug-command-hash) "quit")
+(setf (gethash "exit" realgud-nodedebug-command-hash) "exit")
 (setf (gethash "nodedebug" realgud-command-hash realgud-nodedebug-command-hash))
 
 (provide-me "realgud-nodedebug-")
