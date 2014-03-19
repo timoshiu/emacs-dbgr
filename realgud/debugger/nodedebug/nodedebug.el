@@ -46,13 +46,13 @@ NO-RESET is nil, then that information which may point into other
 buffers and source buffers which may contain marks and fringe or
 marginal icons is reset."
   (interactive)
-  (let* ((cmd-str (or opt-command-line (nodedebug-query-cmdline "nodedebug")))
+  (let* ((cmd-str (or opt-command-line (nodedebug-query-cmdline "node debug")))
 	 (cmd-args (split-string-and-unquote cmd-str))
 	 (parsed-args (nodedebug-parse-cmd-args cmd-args))
 	 (script-args (cdr cmd-args))
 	 (script-name (car script-args))
 	 (cmd-buf))
-    (realgud-run-process "nodedebug" script-name cmd-args
+    (realgud-run-process "node" script-name cmd-args
 		      'nodedebug-track-mode no-reset)
     ))
 
